@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM amazoncorretto:21-alpine-jdk
 RUN mkdir /mc && mkdir /res
 WORKDIR /mc
 VOLUME "/mc"
@@ -7,4 +7,4 @@ EXPOSE 25565
 # rcon port
 EXPOSE 25575
 COPY ./run/* ./config/* /res/
-ENTRYPOINT ["/bin/bash", "/res/run.sh"]
+ENTRYPOINT ["/bin/ash", "/res/run.sh"]
